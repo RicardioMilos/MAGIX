@@ -6,6 +6,8 @@ let spriteList = [];
 window.addEventListener("load", () => {
     canvas = document.querySelector("canvas");
     ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
     canvas.addEventListener("mousemove", spawnAtPos);
     tick();
 })
@@ -57,5 +59,16 @@ function spawnAtPos(e) {
     var y = e.clientY;
 
     spriteList.push(new Flamme(x, y));
-    console.log(x, y);
+}
+
+const applyStyles = iframe =>{
+    let styles = {
+        hideIcons: true,
+        fontColor : "#00FF00",
+        color : "#00FF00",
+		backgroundColor : "rgba(0, 0, 0, 0.5)",
+		fontGoogleName : "Lato",
+		fontSize : "20px",
+    }
+    iframe.contentWindow.postMessage(JSON.stringify(styles), "*");
 }

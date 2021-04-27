@@ -1,6 +1,7 @@
 * {
     margin:0;
     padding:0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 html, body {
@@ -48,7 +49,7 @@ html, body {
 }
 
 .enemy-hand ul li{
-    height: 80%;
+    height: 75%;
     order: 0;
     flex: 1 1 auto;
     align-self: auto;
@@ -75,7 +76,29 @@ html, body {
     border: #00FF00 2px solid;  
 }
 
+#profile-imageContainer {
+    display: flex;
+    flex: 0 0 40%;
+    text-align: center;
+    justify-content: center;
+    border: #00FF00 solid 1px;
+}
+
+#profile-imageContainer div{
+    position: relative;
+    width: 50%;
+    height: 90%;
+}
+
+#profile-imageContainer div img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
 .enemy-deck{
+    color: #00FF00;
+    text-align: center;
     width: 10%;
     height: 15%;
 }
@@ -94,24 +117,24 @@ html, body {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-content: stretch;
     align-items: center;
     width: 100%;
     height: 100%;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 .cards-container ul li{
     height: 80%;
-    order: 0;
-    flex: 1 1 auto;
+    flex: 0 0 10%;
     align-self: auto;
     margin: 5px;
     border: #00FF00 1px solid;
 }
 
 .user-container{
+    color: #00FF00;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -158,20 +181,21 @@ html, body {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-content: stretch;
     align-items: center;
     width: 100%;
     height: 100%;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 .player-hand ul li{
-    height: 80%;
+    height: 90%;
     order: 0;
-    flex: 1 1 auto;
+    flex: 0 0 10%;
     align-self: auto;
     margin: 5px;
+    list-style-type: none;
     border: #00FF00 1px solid;
 }
 
@@ -196,17 +220,96 @@ html, body {
     border: #00FF00 solid 1px;
 }
 
+.cardFaceUp{
+    display: flex;
+    flex: 0 0 10%;
+    flex-direction: column;
+    background-color: black;
+    color:#00FF00;
+}
+
+.cardFaceUp ul li{
+    list-style-type: none;
+}
+
+.card-imageContainer {
+    display: flex;
+    flex: 0 0 40%;
+    text-align: center;
+    justify-content: center;
+    border: #00FF00 solid 1px;
+}
+
+.card-imageContainer div{
+    position: relative;
+    width: 50%;
+    height: 90%;
+}
+
+.card-imageContainer div img{
+    position: relative;
+    width: 100%;
+    height: 100px;
+}
+
+.card-textsContainer{
+    flex: 1 1 auto;
+    border: #00FF00 solid 1px;
+    text-align: center;
+    font-size: medium;
+}
+
+.card-textsContainer h2{
+    font-size: medium;
+}
+
+.card-statsContainer{
+    display: flex;
+    flex-direction: row;
+    border: #00FF00 solid 1px;
+}
+
+.card-statsContainer div{
+    text-align: center;
+}
+
+#mechanicsUL{
+    display: flex;
+    flex-direction: column;
+}
+
+#mechanicsUL li{
+    width: 100%;
+    border: none;
+    text-align: center;
+}
+
+#enemy-health{
+    color: #00FF00;
+    text-align: center;
+}
+
+#enemy-mana{
+    color: #00FF00;
+    text-align: center;
+}
+
+.hp{
+    flex: 1 1 auto;
+}
+
+.attack{
+    flex: 1 1 auto;
+}
+
+.cost{
+    flex: 1 1 auto;
+}
+
 input {
     position: absolute;
     font-size: 40px;
     font-family: Arial, Helvetica, sans-serif;
     width:100px;
     text-align: center;
-}
-
-img {
-    height:150px;
-    position: absolute;
-    top:100px;
-    left:100px;
 }

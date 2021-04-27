@@ -10,21 +10,20 @@ var dirEnum = {
 
 window.addEventListener("load", () => {
     
-    var node = document.createElement("IMG");
+    var node = document.createElement("div");
     node.className = "revenant"
     node.id = "revenantL";
-    node.style.zIndex = -1;
+    node.style.zIndex = 0;
     document.getElementById("auth-body").appendChild(node);
 
-    var node = document.createElement("IMG");
+    var node = document.createElement("div");
     node.className = "revenant"
     node.id = "revenantR";
-    node.style.zIndex = -1;
+    node.style.zIndex = 0;
     document.getElementById("auth-body").appendChild(node);
 
-    // spriteList.push(new FormLogin("formLogin"));
     spriteList.push(new Revenant("revenantL", dirEnum.Left));
-    spriteList.push(new Revenant("revenantR", dirEnum.Right ));
+    spriteList.push(new Revenant("revenantR", dirEnum.Right));
     tick();
 
     setTimeout(reduceTime, 1000);
@@ -35,11 +34,6 @@ const reduceTime = () => {
     if (time > 0) {
         setTimeout(reduceTime, 1000);
 
-    } else {
-        /*
-        const form = spriteList[0];
-        form.element.style.display = block;
-        */
     }
 }
 
@@ -50,4 +44,8 @@ const tick = () => {
     }
 
     window.requestAnimationFrame(tick);
+}
+
+const saveMsg = () => {
+    localStorage["myMessage"] = document.getElementById("username").value;
 }

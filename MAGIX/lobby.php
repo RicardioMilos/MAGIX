@@ -1,3 +1,10 @@
+<?php
+    require_once("action/LobbyAction.php");
+
+    $action = new LobbyAction();
+	$data = $action->execute();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,21 +15,21 @@
 </head>
 <body class="lobby-body">
     <div class="lobby-container">
-        <div class="lobby-options">
+        <form action="lobby.php" class="lobby-options" method="post" id="formLobby">
             <div class="pratique-option">
-                <input type="submit" value="Pratique">
+                <input type="submit" name="trainBtn" value="Pratique">
             </div>
             <div class="jouer-option">
-                <input type="submit" value="Jouer">
+                <input type="submit" name="playBtn" value="Jouer">
             </div>
             <div class="quitter-option">
-                <input type="submit" value="Quitter">
+                <input type="submit" name="quitBtn" value="Quitter">
             </div>
-        </div>
-        <div class="lobby-chat"></div>
+        </form>
+        <iframe style="width:700px;height:240px;" onload="applyStyles(this)"
+            src="https://magix.apps-de-cours.com/server/#/chat/<?=$_SESSION["key"]?>"> 
+        </iframe>
 		<canvas id="canvas"></canvas>
 	</div>
-
-
 </body>
 </html>

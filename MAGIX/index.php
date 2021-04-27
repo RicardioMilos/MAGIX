@@ -1,3 +1,12 @@
+<?php
+	require_once("action/IndexAction.php");
+
+	$action = new LoginAction();
+	$data = $action->execute();
+
+	//require_once("partial/header.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,22 +16,38 @@
     <script src="js/sprites/Revenant.js"></script>
     <script src="js/loginAnim.js"></script>
     <link rel="stylesheet" href="css/global.css">
+    <script>
+        window.addEventListener("load", () => {
+                    if (localStorage["myMessage"] != null) {
+                        document.getElementById("username").value = localStorage["myMessage"];
+                    }
+                });
+    </script>
 </head>
+
 <body class="login-body" id="auth-body">
     <div class="static-elements">
         <div id="title">
             <p id="outOf"> OUT OF</p> <p id="magenta">MAGENTA</p>
         </div>
-        <form action="lobby.php" method="post" id="formLogin">
+        <form action="index.php" method="post" id="formLogin">
+            <?php
+				if ($data["hasConnectionError"]) {
+					?>
+                    <script>console.log("Erreur login");</script>
+					<?php
+				}
+			?>
+
             <div class="login-line">
                 <div class="form-input">
-                    <input type="text" name="username" value="" placeholder="Pseudo" />
+                    <input type="text" name="username" id="username" value="" placeholder="Pseudo" />
                 </div>
                 <div class="form-input">
-                    <input type="password" name="password" placeholder="Mot De Passe"/>
+                    <input type="password" name="pwd" placeholder="Mot De Passe" autocomplete="off"/>
                 </div>
                 <div class="form-button">
-                    <input type="submit" value="ENTRER" id="btnSubmit">
+                    <input type="submit" value="ENTRER" id="btnSubmit" onclick="saveMsg()">
                 </div>
             </div>
         </form>
