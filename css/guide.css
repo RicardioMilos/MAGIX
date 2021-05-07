@@ -1,0 +1,154 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+html, body {
+    height:100vh;
+    background-size: cover;
+    background-position: bottom center;
+}
+
+.guide-body {
+    background-image: url('../images/fightArenaBN.png');
+    color: #00FF00;
+}
+
+input {
+    position: relative;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    width:120px;
+    text-align: center;
+    background-color: black;
+    color: #00FF00;
+}
+
+button {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: black;
+    color: #00FF00;
+    width: 100%;
+    height: 100%;
+}
+
+
+img {
+    height:150px;
+    position: absolute;
+    top:100px;
+    left:100px;
+}
+
+.guide-title{
+    position: sticky; 
+    top: 0;
+    display: flex;
+    height: 10%;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    margin-bottom: 20px;
+    border: #00FF00 2px solid;
+    z-index: 2;
+}
+
+.title-container{
+    text-align: center;
+}
+
+.guide-title div, form{
+    width: 100%;
+}
+
+.back-container{
+    margin-left: 20px;
+}
+
+.back-container input{
+    width: 220px;
+}
+
+.title-container{
+    text-align: center;
+}
+
+.newPost{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.newPost div, textarea{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+textarea{
+    color: #00FF00;
+    background-color: rgba(0, 0, 0, 0.5);
+    resize: none;
+    outline: none;
+}
+
+textarea:focus{
+    border: #00FF00 1px solid;
+}
+
+.posts-container{
+    margin-top: 20px;
+}
+
+.posts-form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.single-post{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 49px;
+}
+
+.post-info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.post-title{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    width: 100%;
+    height: 100%;
+    border: #00FF00 solid 1px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.post-author{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    width: 20%;
+    height: 100%;
+    border: #00FF00 solid 1px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.post-button{
+    width: 5%;
+    text-align: start;
+}

@@ -1,0 +1,358 @@
+* {
+    margin:0;
+    padding:0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html, body {
+    height:100vh;
+    background-size: cover;
+    background-position: bottom center;
+}
+
+.battle-body {
+    background-image: url('../images/stageBN.png');
+    z-index: 0;
+    position: relative;
+}
+
+#result-container{
+    display: none;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 50%;
+    color: #00FF00;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+iframe{
+    position: absolute;
+    left: 62%;
+    width: 40%;
+    height: 25%;
+    border: #00FF00 solid 2px;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+#chat-container{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 30%;
+    height: 50%;
+    color: #00FF00;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.enemy-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: flex-start;
+    height: 15%;
+}
+
+.enemy-container div{
+    height: 100%;
+    order: 0;
+    flex: 1 1 auto;
+    align-self: auto;
+    border: #00FF00 2px solid;  
+}
+
+.enemy-hand {
+    width: 10%;
+}
+
+.enemy-hand ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    padding-top: 10px;
+}
+
+.enemy-hand ul li{
+    height: 75%;
+    order: 0;
+    flex: 1 1 auto;
+    align-self: auto;
+    margin: 5px;
+    border: #00FF00 1px solid;
+}
+
+.enemy-status{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: flex-start;
+    width: 25%;
+    height: 15%;
+}
+
+.enemy-status div{
+    height: 100%;
+    order: 0;
+    flex: 1 1 auto;
+    align-self: auto;
+    border: #00FF00 2px solid;  
+}
+
+#profile-imageContainer {
+    display: flex;
+    flex: 0 0 40%;
+    text-align: center;
+    justify-content: center;
+    border: #00FF00 solid 1px;
+}
+
+#profile-imageContainer div{
+    position: relative;
+    width: 50%;
+    height: 90%;
+}
+
+#profile-imageContainer div img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.enemy-deck{
+    color: #00FF00;
+    text-align: center;
+    width: 10%;
+    height: 15%;
+}
+
+.table-container{
+    width: 100%;
+    height: 60%;
+}
+
+.cards-container{
+    height: 50%;
+    border: #00FF00 solid 1px;
+}
+
+.cards-container ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 5px;
+}
+
+.cards-container ul li{
+    height: 80%;
+    flex: 0 0 10%;
+    align-self: auto;
+    margin: 5px;
+}
+
+.user-container{
+    color: #00FF00;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: flex-start;
+    width: 100%;
+    height: 25%;
+    border: #00FF00 solid 1px;
+}
+
+.display-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: flex-start;
+    border: #00FF00 solid 1px;
+    height: 100%;
+    width: 10%;
+}
+
+.display-container div{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+    height: 33%;
+    border: #00FF00 solid 1px;
+}
+
+.hand-container{
+    border: #00FF00 solid 1px;
+    width: 80%;
+    height: 100%;
+}
+
+.player-hand{
+    height: 100%;
+}
+
+.player-hand ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 5px;
+}
+
+.player-hand ul li{
+    height: 90%;
+    order: 0;
+    flex: 0 0 10%;
+    align-self: auto;
+    margin: 5px;
+    list-style-type: none;
+}
+
+.action-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    border: #00FF00 solid 1px;
+    height: 100%;
+    width: 10%;
+}
+
+.action-container div{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+    height: 33%;
+    border: #00FF00 solid 1px;
+}
+
+.cardFaceUp{
+    display: flex;
+    flex: 0 0 10%;
+    flex-direction: column;
+    background-color: black;
+    color:#FFFFFF;
+}
+
+.cardFaceUp ul li{
+    list-style-type: none;
+}
+
+.card-imageContainer {
+    display: flex;
+    flex: 0 0 40%;
+    text-align: center;
+    justify-content: center;
+    border: #FFFFFF 1px solid;
+}
+
+.card-imageContainer div{
+    position: relative;
+    width: 50%;
+    height: 90%;
+}
+
+.card-imageContainer div img{
+    position: relative;
+    width: 100%;
+    height: 100px;
+}
+
+.card-textsContainer{
+    flex: 1 1 auto;
+    text-align: center;
+    font-size: medium;
+    border: #FFFFFF 1px solid;
+}
+
+.card-textsContainer h2{
+    font-size: medium;
+}
+
+.card-statsContainer{
+    display: flex;
+    flex-direction: row;
+    border: #FFFFFF 1px solid;
+}
+
+.card-statsContainer div{
+    text-align: center;
+}
+
+#enemy-boardUL{
+    list-style-type:none;
+}
+
+#player-boardUL{
+    list-style-type:none;
+}
+
+#mechanicsUL{
+    display: flex;
+    flex-direction: column;
+}
+
+#mechanicsUL li{
+    width: 100%;
+    border: none;
+    text-align: center;
+}
+
+#enemy-health{
+    color: #00FF00;
+    text-align: center;
+}
+
+#enemy-mana{
+    color: #00FF00;
+    text-align: center;
+}
+
+.hp{
+    flex: 1 1 auto;
+}
+
+.attack{
+    flex: 1 1 auto;
+}
+
+.cost{
+    flex: 1 1 auto;
+}
+
+input {
+    position: absolute;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    width:100px;
+    text-align: center;
+    background-color: black;
+    color: #00FF00;
+}

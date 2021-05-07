@@ -1,0 +1,16 @@
+<?php
+
+    class Connection {
+        private static $connection;
+
+        public static function getConnection() {
+            if (empty(Connection::$connection)) {
+                Connection::$connection = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_DATABASE, DB_USER, DB_PASS);
+                Connection::$connection->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, "SET NAMES 'utf8'");
+                Connection::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                Connection::$connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+            }
+
+            return Connection::$connection;
+        }
+    }
