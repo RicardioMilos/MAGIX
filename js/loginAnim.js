@@ -9,7 +9,23 @@ var dirEnum = {
 }
 
 window.addEventListener("load", () => {
-    
+
+    for(var i = 0; i < 6; i++){
+        var node = document.createElement("div");
+
+        if(i % 2 == 0){
+            node.className = "fireworksRegular"
+        }
+        else{
+            node.className = "fireworksFlipped"
+        }
+        node.id = "fireworks" + i;
+        node.style.zIndex = 1;
+        document.getElementById("auth-body").appendChild(node);
+        let y = -Math.floor((Math.random() * 1400) + 700);
+        spriteList.push(new Fireworks("fireworks" + i, 200 + (300 * i), y));
+    }
+
     var node = document.createElement("div");
     node.className = "revenant"
     node.id = "revenantL";
@@ -24,6 +40,7 @@ window.addEventListener("load", () => {
 
     spriteList.push(new Revenant("revenantL", dirEnum.Left));
     spriteList.push(new Revenant("revenantR", dirEnum.Right));
+
     tick();
 
     setTimeout(reduceTime, 1000);
@@ -40,6 +57,7 @@ const reduceTime = () => {
 const tick = () => {
     for (let i = 0; i < spriteList.length; i++) {
         const element = spriteList[i];
+        console.log(element);
         element.tick();
     }
 

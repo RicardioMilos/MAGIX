@@ -4,16 +4,13 @@
 	$action = new LoginAction();
 	$data = $action->execute();
 
-	//require_once("partial/header.php");
+	require_once("partials/header.php");
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
     <script src="js/TiledImage.js"></script>
     <script src="js/sprites/Revenant.js"></script>
+    <script src="js/sprites/Fireworks.js"></script>
     <script src="js/loginAnim.js"></script>
     <link rel="stylesheet" href="css/global.css">
     <script>
@@ -31,14 +28,6 @@
             <p id="outOf"> OUT OF</p> <p id="magenta">MAGENTA</p>
         </div>
         <form action="index.php" method="post" id="formLogin">
-            <?php
-				if ($data["hasConnectionError"]) {
-					?>
-                    <script>console.log("Erreur login");</script>
-					<?php
-				}
-			?>
-
             <div class="login-line">
                 <div class="form-input">
                     <input type="text" name="username" id="username" value="" placeholder="Pseudo" />
@@ -52,5 +41,6 @@
             </div>
         </form>
     </div>
-</body>
-</html>
+
+<?php
+    require_once("partials/footer.php");

@@ -3,18 +3,16 @@
 
     $action = new PostAction();
 	$post = $action->execute();
+
+    require_once("partials/header.php");
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST</title>
     <link rel="stylesheet" href="css/post.css">
 </head>
 <body class="post-body">
     <div class="post-title">
-        <form class="back-container" action="guide.php" method="POST">
+        <form class="back-container" action="post.php" method="POST">
             <input type="submit" name="guideBtn" value="GO BACK!!!">
         </form>
         <div class="title-container">
@@ -57,7 +55,7 @@
     </div>
     <div class="comments-container">
         <form class="newComment-form" action="post.php" method="POST">
-            <textarea name="newComment-text" class="newComment-text" cols="30" rows="5" placeholder="Un savoir ancien a transmettre?"></textarea>
+            <textarea name="newComment-text" class="newComment-text" cols="30" rows="5" placeholder="Quelque chose à ajouter?"></textarea>
             <div class="comment-choice">
                 <input type="submit" name="commentBtn" value="Commenter">
             </div>
@@ -72,7 +70,7 @@
                             <?= $c["commentText"] ?>
                         </div>
                         <div class="comment-author">
-                            <?= $c["commentAuthor"] ?>
+                            <?= $c["commentAuthor"]?>
                         </div>
                     </div>
             <?php
@@ -81,5 +79,6 @@
         ?>
         </div>
     </div>
-</body>
-</html>
+
+<?php
+    require_once("partials/footer.php");

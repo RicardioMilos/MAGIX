@@ -37,16 +37,18 @@
             $connection = Connection::getConnection();
             $previousSameComment = PostDAO::getPostByInfo($author, $title, $text);
             if(count($previousSameComment) == 0){
-                if(!(ctype_space($text) || $text == "")){
-                    $date = date('Y-m-d H:i:s');
-                    $visibility = '0';
-                    $statement = $connection->prepare("INSERT into `posts`(postAuthor, postTitle, postText, postDate, visibility) values  (?, ?, ?, ?, ?)");
-                    $statement->bindParam(1, $author);
-                    $statement->bindParam(2, $title);
-                    $statement->bindParam(3, $text);
-                    $statement->bindParam(4, $date);
-                    $statement->bindParam(5, $visibility);
-                    $statement->execute();
+                if(!(ctype_space($title) || $title == "")){
+                    if(!(ctype_space($text) || $text == "")){
+                        $date = date('Y-m-d H:i:s');
+                        $visibility = '0';
+                        $statement = $connection->prepare("INSERT into `posts`(postAuthor, postTitle, postText, postDate, visibility) values  (?, ?, ?, ?, ?)");
+                        $statement->bindParam(1, $author);
+                        $statement->bindParam(2, $title);
+                        $statement->bindParam(3, $text);
+                        $statement->bindParam(4, $date);
+                        $statement->bindParam(5, $visibility);
+                        $statement->execute();
+                    }
                 }
             }
         }

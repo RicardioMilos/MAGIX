@@ -19,12 +19,17 @@
 				exit;
 			}
 
+			if(isset($_POST["lobbyBtn"])){
+                header("location:lobby.php");
+                exit;
+            }
+
             if(isset($_SESSION["key"])){
                 $data["key"] = $_SESSION["key"];
             }
 
 			if(isset($_POST["postBtn"])){
-				PostDAO::addPost($_SESSION["username"], $_POST["newPost-title"], $_POST["newPost-text"]);
+					PostDAO::addPost($_SESSION["username"], $_POST["newPost-title"], $_POST["newPost-text"]);
             }
 
 			if(isset($_POST["post-id"])){
@@ -35,7 +40,6 @@
             }
 
             $data = PostDAO::getPosts();
-			PostDAO::console_log($data);
 			return $data;
 		}
 	}

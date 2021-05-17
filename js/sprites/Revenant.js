@@ -38,14 +38,14 @@ class Revenant {
 
     move() {
         if(this.direction == dirEnum.Right){
-            this.startX = 135;
+            this.startX = 0
             this.element.style.left = this.startX + "px";
         }
         else if(this.direction == dirEnum.Left){
-            this.startX  = (window.innerWidth - 240);
+            this.startX  = (window.innerWidth - (window.innerWidth / 20));
             this.element.style.left = this.startX + "px";
         }
-        this.startY = 800;
+        this.startY = (window.innerHeight - (window.innerHeight / 9));
         this.element.style.top = this.startY + "px";
     }
 
@@ -68,7 +68,7 @@ class Revenant {
                 }
                 this.direction = dirEnum.top;
                 let top = this.element.offsetTop;
-                this.element.style.top = top - 1 + "px";
+                this.element.style.top = top - 2 + "px";
             }
             else {
                 if(this.direction == dirEnum.Right){

@@ -3,19 +3,16 @@
 
     $action = new BattleAction();
 	$data = $action->execute();
+
+    require_once("partials/header.php");
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BATTLE</title>
     <link rel="stylesheet" href="css/battle.css">
     <script src="js/game.js"></script>
 </head>
 
-<template id="faceUpCard-template">
-			
+<template id="faceUpCard-template">	
 			<div class="card-imageContainer" id="card-imageContainer">
                 <div>
                     <img src="" alt="">
@@ -54,7 +51,11 @@
                 <img id="profile-Img">
             </div>
         </div>
-        <div class="enemy-mana" id="enemy-mana"></div>
+        <div class="enemy-mana" id="enemy-mana">
+            <div>
+                
+            </div>
+        </div>
     </div>
     <div class="enemy-deck" id="enemy-deck"></div>
 </div>
@@ -118,5 +119,5 @@
     </div>
 </div>
 
-</body>
-</html>
+<?php
+    require_once("partials/footer.php");

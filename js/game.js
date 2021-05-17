@@ -36,7 +36,7 @@ window.addEventListener("load", () => {
 
 const displayResult = (result) => {
 	var elem = document.getElementById("result-container");
-	elem.style.display = 'block';
+	elem.style.display = 'flex';
 	elem.innerHTML = result;
 }
 
@@ -109,8 +109,21 @@ const loadCards = (data, spaceID, cardPool, zone) => {
 		li.id = i;
 		li.innerHTML = templateHTML;
 
-		let img = findCardImage(data, cardPool[i].id);
-		li.querySelector("img").src = img;
+		
+		try{
+			let img = findCardImage(data, cardPool[i].id);
+			li.querySelector("img").src = img;
+			let pattern = /([A-Za-z\s]+)(?=(\.jpg))/;
+			let cardName = pattern.exec(img);
+			li.querySelector("h2").innerText = cardName[0];
+		}
+		catch{
+			let img = "images/TCP/portraits/0_Generique.jpg";
+			li.querySelector("img").src = img;
+			let pattern = /([A-Za-z\s]+)(?=(\.jpg))/;
+			let cardName = pattern.exec(img);
+			li.querySelector("h2").innerText = cardName[0];
+		}
 
 		if(zone == "HAND"){
 			if(cardPool[i].cost <= data["result"]["mp"]){
@@ -123,10 +136,6 @@ const loadCards = (data, spaceID, cardPool, zone) => {
 				}
 			}
 		}
-
-		let pattern = /([A-Za-z\s]+)(?=(\.jpg))/;
-		let cardName = pattern.exec(img);
-		li.querySelector("h2").innerText = cardName[0];
 
 		cardPool[i].mechanics.forEach(mechanic => {
 			let mechLI = document.createElement("li");
@@ -283,11 +292,11 @@ const skipTurn = () => {
 }
 
 const findCardImage = (data, id) => {
-	$path = "images/TCP/portraits/" + String(data[0][id + 1]);
-	return $path;
+	let path = "images/TCP/portraits/" + String(data[0][id + 1]);
+	return path;
 }
 
 const findClassImage = (className) => {
-	$path = "images/TCP/portraits/" + className + ".jpg";
-	return $path;
+	let path = "images/TCP/portraits/" + className + ".jpg";
+	return path;
 }

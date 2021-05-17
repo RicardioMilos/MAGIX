@@ -3,13 +3,11 @@
 
     $action = new LobbyAction();
 	$data = $action->execute();
+
+    require_once("partials/header.php");
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOBBY</title>
     <script src="js/lobbyAnim.js"></script>
     <link rel="stylesheet" href="css/lobby.css">
 </head>
@@ -22,6 +20,9 @@
             <div class="jouer-option">
                 <input type="submit" name="playBtn" value="Jouer">
             </div>
+            <div class="watch-option">
+                <input type="submit" name="watchBtn" value="Observer">
+            </div>
             <div class="guide-option">
                 <input type="submit" name="guideBtn" value="Guide">
             </div>
@@ -29,10 +30,13 @@
                 <input type="submit" name="quitBtn" value="Quitter">
             </div>
         </form>
-        <iframe style="width:700px;height:240px;" onload="applyStyles(this)"
-            src="https://magix.apps-de-cours.com/server/#/chat/<?=$_SESSION["key"]?>"> 
-        </iframe>
+        <div id="chat-container">
+            <iframe onload="applyStyles(this)"
+                src="https://magix.apps-de-cours.com/server/#/chat/<?=$_SESSION["key"] . '/large'?>"> 
+            </iframe>
+        </div>
 		<canvas id="canvas"></canvas>
 	</div>
-</body>
-</html>
+
+<?php
+    require_once("partials/footer.php");

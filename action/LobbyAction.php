@@ -64,6 +64,19 @@
                     $hasConnectionError = true;
                 }
             }
+            elseif(isset($_POST["watchBtn"])){
+                $data["username"] = "Karl Drogo";
+                $result = parent::callAPI("games/observe", $data);
+
+                if($result == "INVALID_KEY"){
+                    $_SESSION["isInGame"] = true;
+                    header("location:battle.php");
+                    exit;
+                } 
+                else {
+                    $hasConnectionError = true;
+                }
+            }
             elseif(isset($_POST["guideBtn"])){
                 header("location:guide.php");
                 exit;

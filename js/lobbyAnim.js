@@ -34,8 +34,8 @@ class Flamme {
     constructor(x, y) {
         this.x = x;
         this.y = y;
+        this.timeAlive = 0;
         this.size = 2 + Math.random() * 5;
-        //this.speed = this.size/2;
         this.speed = 2;
     }
 
@@ -43,10 +43,11 @@ class Flamme {
         let alive = true;
 
         this.y -= this.speed;
+        this.timeAlive += 1;
         ctx.fillStyle = "#00FF00";
         ctx.fillRect(this.x, this.y, this.size, this.size);
 
-        if (this.y < 0) {
+        if (this.y < 0 || this.timeAlive > 30) {
             alive = false;
         }
 
@@ -58,7 +59,13 @@ function spawnAtPos(e) {
     var x = e.clientX;
     var y = e.clientY;
 
+    spriteList.push(new Flamme(x, y - 1));
+
+    spriteList.push(new Flamme(x - 1, y));
     spriteList.push(new Flamme(x, y));
+    spriteList.push(new Flamme(x + 1, y));
+
+    spriteList.push(new Flamme(x, y - 1));
 }
 
 const applyStyles = iframe =>{

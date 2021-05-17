@@ -3,18 +3,16 @@
 
     $action = new GuideAction();
 	$posts = $action->execute();
+
+    require_once("partials/header.php");
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUIDE</title>
     <link rel="stylesheet" href="css/guide.css">
 </head>
 <body class="guide-body">
     <div class="guide-title">
-        <form class="back-container" action="lobby.php" method="POST">
+        <form class="back-container" action="guide.php" method="POST">
             <input type="submit" name="lobbyBtn" value="GO BACK!!!">
         </form>
         <div class="title-container">
@@ -44,7 +42,7 @@
                             <?=$p['postTitle']?>
                         </div>
                         <div class="post-author">
-                            <?=$p['postAuthor']?>
+                            <?=$p['postAuthor']?> - <?= $p["postDate"]?>
                         </div>
                         <div class="post-button">
                             <input type="hidden" name="post-id" value="<?=$p['id']?>">
@@ -58,5 +56,6 @@
             }
         ?>
     </div>
-</body>
-</html>
+
+<?php
+    require_once("partials/footer.php");

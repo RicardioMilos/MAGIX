@@ -24,6 +24,11 @@
                 }
             }
 
+			if(isset($_POST["guideBtn"])){
+                header("location:guide.php");
+                exit;
+            }
+
             if(isset($_SESSION["key"])){
                 $data["key"] = $_SESSION["key"];
             }
@@ -43,12 +48,10 @@
             }
 
 			if(isset($_SESSION["post-id"])){
-				PostDAO::console_log($_SESSION["post-id"]);
 				$data["post"] = PostDAO::getPost($_SESSION["post-id"])[0];
 				$data["comments"] = PostDAO::getComments($_SESSION["post-id"]);	
             }
-
-			PostDAO::console_log($data);
+			
 			return $data;
 		}
 	}
