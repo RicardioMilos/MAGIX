@@ -31,6 +31,7 @@
 					$_SESSION["username"] = $_POST["username"];
 					$_SESSION["isConnected"] = true;
 					$_SESSION["isInGame"] = false;
+					$_SESSION["isWatchingGame"] = false;
 					$_SESSION["isInPost"] = false;
  
 					header("location:lobby.php");

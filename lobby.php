@@ -13,7 +13,11 @@
 </head>
 <body class="lobby-body">
     <div class="lobby-container">
-        <form action="lobby.php" class="lobby-options" method="post" id="formLobby">
+        <form action="lobby.php" method="post" class="observeInput-container" id="observeInput-container">
+            <input type="text" name="observeInput" id="observeInput" placeholder="Nom d'Usager">
+            <input type="submit" name="searchBtn" value="Chercher">
+        </form>
+        <form action="lobby.php" method="post" class="lobby-options" id="formLobby">
             <div class="pratique-option">
                 <input type="submit" name="trainBtn" value="Pratique">
             </div>
@@ -21,7 +25,7 @@
                 <input type="submit" name="playBtn" value="Jouer">
             </div>
             <div class="watch-option">
-                <input type="submit" name="watchBtn" value="Observer">
+                <input type="button" name="watchBtn" value="Observer" onclick="toggleObserveInput()">
             </div>
             <div class="guide-option">
                 <input type="submit" name="guideBtn" value="Guide">

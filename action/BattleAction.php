@@ -18,8 +18,8 @@
                 header("location:index.php");
                 exit;
             }
-            else if(isset($_SESSION["isInGame"])){
-                if(!$_SESSION["isInGame"]){
+            else if(isset($_SESSION["isInGame"]) && isset($_SESSION["isWatchingGame"])){
+                if(!$_SESSION["isInGame"] && !$_SESSION["isWatchingGame"]){
                     header("location:lobby.php");
                     exit;
                 }

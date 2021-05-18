@@ -9,7 +9,7 @@
 
     <title>BATTLE</title>
     <link rel="stylesheet" href="css/battle.css">
-    <script src="js/game.js"></script>
+    <script src="js/battle.js"></script>
 </head>
 
 <template id="faceUpCard-template">	

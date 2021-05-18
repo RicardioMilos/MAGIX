@@ -79,3 +79,13 @@ const applyStyles = iframe =>{
     }
     iframe.contentWindow.postMessage(JSON.stringify(styles), "*");
 }
+
+const toggleObserveInput = () => {
+    var elem = document.getElementById("observeInput-container");
+    if(elem.style.display == 'none'){
+		elem.style.display = 'flex';
+	}
+	else{
+		elem.style.display = 'none';
+	}
+}

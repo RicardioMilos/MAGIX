@@ -12,6 +12,7 @@
 		protected function executeAction() {
 			$data = [];
 			$_SESSION["isInGame"] = false;
+			$_SESSION["isWatchingGame"] = false;
 			
             if(!isset($_SESSION["isConnected"]) || !$_SESSION["isConnected"]){
                     header("location:index.php");

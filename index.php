@@ -12,7 +12,7 @@
     <script src="js/sprites/Revenant.js"></script>
     <script src="js/sprites/Fireworks.js"></script>
     <script src="js/loginAnim.js"></script>
-    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
     <script>
         window.addEventListener("load", () => {
                     if (localStorage["myMessage"] != null) {

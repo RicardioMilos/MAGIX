@@ -1,0 +1,2 @@
+Pour les console log en PHP: https://stackify.com/how-to-log-to-console-in-php/
+Pour les styles auto complete: https://css-tricks.com/snippets/css/change-autocomplete-styles-webkit-browsers/

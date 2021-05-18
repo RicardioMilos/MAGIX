@@ -11,6 +11,7 @@
 		protected function executeAction() {
             $hasConnectionError = false;
             $_SESSION["isInGame"] = false;
+            $_SESSION["isWatchingGame"] = false;
             $_SESSION["isInPost"] = false;
 			$data = [];
 
@@ -64,12 +65,13 @@
                     $hasConnectionError = true;
                 }
             }
-            elseif(isset($_POST["watchBtn"])){
-                $data["username"] = "Karl Drogo";
+            elseif(isset($_POST["searchBtn"])){
+                $data["username"] = $_POST["observeInput"];
                 $result = parent::callAPI("games/observe", $data);
 
-                if($result == "INVALID_KEY"){
-                    $_SESSION["isInGame"] = true;
+                if(is_object($result) || CommonAction::isJson($result)){
+                    $_SESSION["isWatchingGame"] = true;
+                    $_SESSION["userWatched"] = $_POST["observeInput"];
                     header("location:battle.php");
                     exit;
                 } 

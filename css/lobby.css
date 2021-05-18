@@ -39,13 +39,69 @@ img {
     height: 99%;
 }
 
+.observeInput-container{
+    display: none;
+    position: absolute; 
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    top: 30%;
+    left: 50%;
+    width: 33%;
+    height: 30%;
+    border: #00FF00 solid 3px;
+    border-radius: 25px;
+}
+
+.observeInput-container:after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 25px;
+    background: black;
+    z-index: -1;
+}
+
+.observeInput-container input{
+    position: relative;
+    width: 80%;
+    background-color: black;
+    color: #00FF00;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus{
+  border: 1px solid #00FF00;
+  -webkit-text-fill-color: #00FF00;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  background-color: black;
+  transition: 5000s ease-in-out 0s;
+}
+
+.observeInput-container input::placeholder{
+    color: #00FF00;
+}
+
 .lobby-options{
-    position: relative; 
     display: flex;
+    position: relative; 
     flex-direction: column;
     text-align: center;
     top: 5%;
-    left: 100px;
+    left: 5%;
     width: 30%;
     height: 80%;
     border: #00FF00 solid 3px;
